@@ -7,6 +7,7 @@ In the data access layer, two databases—MySQL (for patient, doctor, appointmen
 
 
 Section 2: Numbered flow of data and control
+
 Step1: User accesses Admin Dashboard or Appointment pages.
 Step2: The action is routed to the appropriate Thymeleaf or REST controller.
 Step3: The controller calls the service layer(apply business rules and validations)
