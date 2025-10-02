@@ -1,14 +1,35 @@
-# User Story Template
-
-**Title:**
-_As a [user role], I want [feature/goal], so that [reason]._
-
+**Title: admin log in**
+As an admin, I want Log into the portal with my username and password, so that I can manage the platform securely.
 **Acceptance Criteria:**
-1. [Criteria 1]
-2. [Criteria 2]
-3. [Criteria 3]
+1. manage the platform securely
+**Priority:** [Low]
+**Story Points:** [3]
 
-**Priority:** [High/Medium/Low]
-**Story Points:** [Estimated Effort in Points]
-**Notes:**
-- [Additional information or edge cases]
+**Title: admin log out**
+As an admin, I want Log out of the portal, so that I can protect system access.
+**Acceptance Criteria:**
+1. protect system access
+**Priority:** [Low]
+**Story Points:** [1]
+
+**Title: admin add doctors**
+As an admin, I want add doctors to the portal.
+**Acceptance Criteria:**
+1. add doctors to the portal
+**Priority:** [High]
+**Story Points:** [1]
+
+**Title: admin delete doctor's profile **
+As an admin, I want delete doctor's profile from the portal.
+**Acceptance Criteria:**
+1. delete doctor's profile from the portal
+**Priority:** [Low]
+**Story Points:** [1]
+
+**Title: admin statistics**
+As an admin, I want Run a stored procedure in MySQL CLI, so that I can get the number of appointments per month and track usage statistics.
+**Acceptance Criteria:**
+1.get the number of appointments per month
+2.track usage statistics
+**Priority:** [Low]
+**Story Points:** [2]
