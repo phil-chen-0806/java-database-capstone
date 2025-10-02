@@ -11,6 +11,7 @@
 ### Table: patients
 - patient_id: INT, Primary Key, Foreign Key → users(id)
 - name: Varchar(40), NOT NULL
+- address: Varchar(80), NOT NULL
 - details: Varchar(120), NOT NULL
 
 ### Table: doctors
