@@ -58,7 +58,8 @@ A prescription should tied to a specific appointment.
 
 
 ### Collection: prescriptions
-```json
+## ```json
+//json
 {
 "_id": "ObjectId('64abc123456')",
 "patients_id",
@@ -74,10 +75,10 @@ A prescription should tied to a specific appointment.
 		"location": "Market Street"
 	}
 }
-json```
+
 
 ### Collection: message
-```json
+//json
 {
 "_id": "ObjectId('64abc123456')",
 "patient_id",
