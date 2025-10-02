@@ -6,6 +6,7 @@
 - email: Varchar(40), NOT NULL
 - phone: Varchar(15), NOT NULL
 - password: Varchar(40), NOT NULL
+- status: INT (1 = Active, 0 = Deleted)
 
 ### Table: patients
 - patient_id: INT, Primary Key, Foreign Key → users(id)
@@ -36,8 +37,8 @@
 
 ### other questions
 What happens if a patient is deleted? Should appointments also be deleted?
-1) No, appointments and patient should not be physically deleted. Deleted can be a status for the records in appointments table and patient table.
-2) Yes for future appintments, and no for other status.
+v2) No, appointments and patient should not be physically deleted. Deleted can be a status for the records in appointments table and patient table.
+v1) Yes for future appintments, and no for other status.
 
 Should a doctor be allowed to have overlapping appointments?
 No.
@@ -73,7 +74,7 @@ A prescription should tied to a specific appointment.
 		"location": "Market Street"
 	}
 }
-
+json```
 
 ### Collection: message
 ```json
