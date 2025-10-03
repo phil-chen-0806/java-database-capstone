@@ -1,17 +1,10 @@
 package com.project.back_end.models;
-// add some packages may not be used
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+//@Document
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-
-//import java.lang.annotation.Documented;
-//import java.lang.annotation.Inherited;
-//@Document
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
 //@Document
 @Document(collection = "prescriptions")
