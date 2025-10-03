@@ -75,7 +75,7 @@ public class Prescription {
     public Prescription() {}
 
         // Parameterized constructor
-    public Prescription(Long id, String patientName, Patient patient, Long appointmentId, String medication, String dosage, String doctorNotes) {
+    public Prescription(Long id, String patientName, Long appointmentId, String medication, String dosage, String doctorNotes) {
         this.id = id;
         this.patientName = patientName;
         this.appointmentId = appointmentId;
