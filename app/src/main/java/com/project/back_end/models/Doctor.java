@@ -1,6 +1,13 @@
 package com.project.back_end.models;
 // add some packages may not be used
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import java.util.List;
+// List<String> 
+import com.fasterxml.jackson.annotation.JsonProperty;
+// @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

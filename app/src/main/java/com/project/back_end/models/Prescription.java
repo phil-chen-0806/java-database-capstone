@@ -1,6 +1,13 @@
 package com.project.back_end.models;
 // add some packages may not be used
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+
+//import java.lang.annotation.Documented;
+//import java.lang.annotation.Inherited;
+//@Document
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
