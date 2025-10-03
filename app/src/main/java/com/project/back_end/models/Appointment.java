@@ -1,4 +1,16 @@
 package com.project.back_end.models;
+// add some packages may not be used
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+
 
 @Entity
 public class Appointment {
