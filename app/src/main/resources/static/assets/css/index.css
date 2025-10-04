@@ -1,18 +1,17 @@
 * { 
     margin: 0; 
     padding: 0; 
-    box-sizing: 
-    border-box; 
+    box-sizing: border-box; 
 }
 
-html,
-body {
-    width: 100%;
+html, body {
     height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .wrapper {
     display: flex;
+    flex-direction:column ;
     min-height: 100vh;
 }
 
@@ -20,30 +19,35 @@ h2 {
     font-size: 48px;
     margin-bottom: 50px;
     color: #003e3e;
-    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-family: 'Alegreya', 'Roboto', sans-serif;
 }
 
-main-content {
-    margin-top: 40px;
+.main-content {    
     flex-grow: 1;
+    padding: 40px;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
-    background-image: url('defineRole/index.png'); 
+    text-align: center;
+    background-image: url('../images/defineRole/index.png'); 
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 button {
-    color: #015c5d;
-    border: 12px;
-    border-radius: 5px;
+    background-color: #015c5d;
+    color: white;
+    border: none;
+    border-radius: 12px;
     padding: 10px 20px;
-    width: 200px;
     margin-top: 10px;
+    width: 200px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
