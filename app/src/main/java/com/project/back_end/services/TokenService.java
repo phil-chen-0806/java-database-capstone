@@ -1,5 +1,7 @@
 package com.project.back_end.services;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TokenService {
 // 1. **@Component Annotation**
 // The @Component annotation marks this class as a Spring component, meaning Spring will manage it as a bean within its application context.
@@ -38,6 +40,9 @@ public class TokenService {
 // - If the role or user does not exist, it returns false, indicating the token is invalid.
 // - The method gracefully handles any errors by returning false if the token is invalid or an exception occurs.
 // This ensures secure access control based on the user's role and their existence in the system.
-
+    public boolean validateToken(int token, String role)
+    {
+        return true;
+    }
 
 }

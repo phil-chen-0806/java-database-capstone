@@ -1,6 +1,8 @@
 package com.project.back_end.mvc;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import com.project.back_end.services.TokenService;
 
 @Controller
 public class DashboardController {
@@ -10,7 +12,7 @@ public class DashboardController {
 //    - Annotate the class with `@Controller` to indicate that it serves as an MVC controller returning view names (not JSON).
 //    - This class handles routing to admin and doctor dashboard pages based on token validation.
 
-    @Autowired
+    //@Autowired
     private TokenService tokenService;
 // 2. Autowire the Shared Service:
 //    - Inject the common `Service` class, which provides the token validation logic used to authorize access to dashboards.
