@@ -1,6 +1,7 @@
 package com.project.back_end.repo;
 
-public interface PatientRepository {
+@Repository
+public interface PatientRepository extends JpaRepository<Patient, Long>{
     // 1. Extend JpaRepository:
 //    - The repository extends JpaRepository<Patient, Long>, which provides basic CRUD functionality.
 //    - This allows the repository to perform operations like save, delete, update, and find without needing to implement these methods manually.
