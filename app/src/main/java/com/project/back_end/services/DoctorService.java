@@ -6,15 +6,21 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.Optional;
+
 import com.project.back_end.DTO.Login;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.project.back_end.repo.AppointmentRepository;
-import com.project.back_end.repo.DoctorRepository;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 import com.project.back_end.models.Appointment;
 import com.project.back_end.models.Doctor;
-
+import com.project.back_end.repo.AppointmentRepository;
+import com.project.back_end.repo.DoctorRepository;
 
 @Service
 public class DoctorService {
@@ -49,11 +55,12 @@ public class DoctorService {
 //    - Instruction: Ensure that the time slots are properly formatted and the available slots are correctly filtered.
 
     @Transactional
-    private List<String> getDoctorAvailability(Long doctorId){
-        Doctor doctor = doctorRepository.findById(doctorId);
+    public List<String> getDoctorAvailability(Long doctorId, LocalDate date) {
+        Optional<Doctor> doctor = doctorRepository.findById(doctorId);
+        //Optional<Doctor> ???
 
         List<String> availabletimeslots ; //=new ArrayList<>();
-        return availabletimeslots.stream();
+        return availabletimeslots;
     }
 
 
@@ -82,7 +89,7 @@ public class DoctorService {
 //    - Instruction: Make sure that the doctor exists before attempting to save the updated record and handle any errors properly.
 
     @Transactional
-    private int updateDoctor(Doctor doctor){
+    public int updateDoctor(Doctor doctor){
         return 1;//success
     }
 
@@ -91,7 +98,7 @@ public class DoctorService {
 //    - Instruction: Ensure that the collection is eagerly loaded, especially if dealing with lazy-loaded relationships (e.g., available times). 
 
     @Transactional
-    private List<Doctor> getDoctors(){
+    public List<Doctor> getDoctors(){
         return doctorRepository.findAll();
     }
 
