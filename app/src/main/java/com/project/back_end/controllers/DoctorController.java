@@ -1,7 +1,7 @@
 package com.project.back_end.controllers;
 import com.project.back_end.DTO.Login;
 import com.project.back_end.models.Doctor;
-import com.project.back_end.services.AppService;
+import com.project.back_end.services.Service;
 import com.project.back_end.services.DoctorService;
 import jakarta.validation.Valid;
 import java.time.LocalDate;
@@ -28,10 +28,10 @@ public class DoctorController {
 //    - Inject `DoctorService` for handling the core logic related to doctors (e.g., CRUD operations, authentication).
 //    - Inject the shared `Service` class for general-purpose features like token validation and filtering.
     private final DoctorService doctorService;
-    private final AppService service;
+    private final Service service;
 
     @Autowired
-    public DoctorController(DoctorService doctorService, AppService service) {
+    public DoctorController(DoctorService doctorService, Service service) {
         this.doctorService = doctorService;
         this.service = service;
     }

@@ -22,6 +22,7 @@ import com.project.back_end.models.Doctor;
 import com.project.back_end.repo.AppointmentRepository;
 import com.project.back_end.repo.DoctorRepository;
 
+
 @Service
 public class DoctorService {
     private final DoctorRepository doctorRepository;
@@ -39,7 +40,7 @@ public class DoctorService {
 //    - Instruction: Ensure constructor injection is used for injecting dependencies into the service.
 
     public DoctorService(DoctorRepository doctorRepository, AppointmentRepository appointmentRepository, TokenService tokenService){
-        this.doctorRepository = DoctorRepository; 
+        this.doctorRepository = doctorRepository; 
         this.appointmentRepository = appointmentRepository;
         this.tokenService = tokenService;
     }
@@ -60,7 +61,8 @@ public class DoctorService {
         //Optional<Doctor> ???
 
         List<String> availabletimeslots ; //=new ArrayList<>();
-        return availabletimeslots;
+        //return availabletimeslots;
+        return List.of("Doctor not found with ID: " + doctorId);
     }
 
 
@@ -98,8 +100,9 @@ public class DoctorService {
 //    - Instruction: Ensure that the collection is eagerly loaded, especially if dealing with lazy-loaded relationships (e.g., available times). 
 
     @Transactional
-    public List<Doctor> getDoctors(){
-        return doctorRepository.findAll();
+    public List<Doctor> getDoctors(){         
+        List<Doctor> doctors = doctorRepository.findAll();
+        return doctors;
     }
 
 // 8. **deleteDoctor Method**:
@@ -107,7 +110,9 @@ public class DoctorService {
 //    - It first checks if the doctor exists. If not, it returns `-1`; otherwise, it deletes the doctor and their appointments.
 //    - Instruction: Ensure the doctor and their appointments are deleted properly, with error handling for internal issues.
 
-    public int deleteDoctor(long id) {}
+    public int deleteDoctor(long id) {
+        return 1;
+    }
 
 
 // 9. **validateDoctor Method**:
@@ -116,7 +121,8 @@ public class DoctorService {
 //    - Instruction: Make sure to handle invalid login attempts and password mismatches properly with error responses.
     
     public ResponseEntity<Map<String, String>> validateDoctor(Login login) {
-    
+        Map<String, String> map = new HashMap<>();
+        return ResponseEntity.status(HttpStatus.OK).body(map);
     }
 
 
@@ -127,7 +133,8 @@ public class DoctorService {
 
     @Transactional
     public Map<String, Object> findDoctorByName(String name) {
-        
+        Map<String, Object> map = new HashMap<>();
+        return map;
     }
 
 
@@ -138,7 +145,8 @@ public class DoctorService {
 
     @Transactional
     public Map<String, Object> filterDoctorsByNameSpecilityandTime(String name, String specialty, String amOrPm) {
-    
+        Map<String, Object> map = new HashMap<>();
+        return map;
     }
 
 // 12. **filterDoctorByTime Method**:
@@ -148,7 +156,7 @@ public class DoctorService {
 
     public  List<Doctor> filterDoctorByTime(List<Doctor> doctors, String time_period)
     {
-
+        return doctors;       
     }
 
 // 13. **filterDoctorByNameAndTime Method**:
@@ -158,7 +166,8 @@ public class DoctorService {
 
     @Transactional
     public Map<String, Object> filterDoctorByNameAndTime(String name, String amOrPm) {
-
+        Map<String, Object> map = new HashMap<>();
+        return map;
     }
 
 // 14. **filterDoctorByNameAndSpecility Method**:
@@ -168,7 +177,8 @@ public class DoctorService {
 
     @Transactional
     public Map<String, Object> filterDoctorByNameAndSpecility(String name, String specilty) {
-
+        Map<String, Object> map = new HashMap<>();
+        return map;
     }
 
 // 15. **filterDoctorByTimeAndSpecility Method**:
@@ -178,7 +188,8 @@ public class DoctorService {
 
     @Transactional
     public Map<String, Object> filterDoctorByTimeAndSpecility(String specilty, String amOrPm) {
-
+        Map<String, Object> map = new HashMap<>();
+        return map;
     }
 
 // 16. **filterDoctorBySpecility Method**:
@@ -188,7 +199,8 @@ public class DoctorService {
 
     @Transactional
     public Map<String, Object> filterDoctorBySpecility(String specilty) {
-
+        Map<String, Object> map = new HashMap<>();
+        return map;
     }
 
 // 17. **filterDoctorsByTime Method**:
