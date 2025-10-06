@@ -1,6 +1,15 @@
 package com.project.back_end.repo;
+import com.project.back_end.models.Appointment;
+import jakarta.transaction.Transactional;
+import java.time.LocalDateTime;
+import java.util.List;
 
-public interface AppointmentRepository  {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface AppointmentRepository extends JpaRepository<Appointment, Long> {
 
    // 1. Extend JpaRepository:
 //    - The repository extends JpaRepository<Appointment, Long>, which gives it basic CRUD functionality.
@@ -17,6 +26,13 @@ public interface AppointmentRepository  {
 //      - Return type: List<Appointment>
 //      - Parameters: Long doctorId, LocalDateTime start, LocalDateTime end
 //      - It uses a LEFT JOIN to fetch the doctor’s available times along with the appointments.
+
+        @Query("")
+        List<Appointment> findByDoctorIdAndAppointmentTimeBetween(
+            Long doctorId,
+            LocalDateTime start,
+            LocalDateTime end
+        );
 
 //    - **findByDoctorIdAndPatient_NameContainingIgnoreCaseAndAppointmentTimeBetween**:
 //      - This method retrieves appointments for a specific doctor and patient name (ignoring case) within a given time range.
