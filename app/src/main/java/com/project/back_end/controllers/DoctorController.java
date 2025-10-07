@@ -69,6 +69,7 @@ public class DoctorController {
     @GetMapping
     public ResponseEntity<Map<String, Object>> getDoctors() {
         Map<String, Object> map = new HashMap<>();
+        System.out.println("incoming request controller is called");
         map.put("doctors", doctorService.getDoctors());
         return ResponseEntity.status(HttpStatus.OK).body(map);
     }
@@ -78,6 +79,7 @@ public class DoctorController {
 //    - Accepts a validated `Doctor` object in the request body and a token for authorization.
 //    - Validates the token for the `"admin"` role before proceeding.
 //    - If the doctor already exists, returns a conflict response; otherwise, adds the doctor and returns a success message.
+
     @PostMapping("/add/{token}")
     public ResponseEntity<Map<String, String>> saveDoctor(
             @RequestBody @Valid Doctor doctor,

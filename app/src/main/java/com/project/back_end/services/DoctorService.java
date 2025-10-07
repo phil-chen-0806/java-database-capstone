@@ -100,8 +100,10 @@ public class DoctorService {
 //    - Instruction: Ensure that the collection is eagerly loaded, especially if dealing with lazy-loaded relationships (e.g., available times). 
 
     @Transactional
-    public List<Doctor> getDoctors(){         
+    public List<Doctor> getDoctors(){   
+        System.out.println("service is called");      
         List<Doctor> doctors = doctorRepository.findAll();
+        System.out.println(doctors.size() + ": docoters are found"); 
         return doctors;
     }
 
