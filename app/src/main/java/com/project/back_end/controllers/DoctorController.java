@@ -196,7 +196,9 @@ public class DoctorController {
             @PathVariable String speciality
     ) {
         Map<String, Object> map = new HashMap<>();
+        System.out.println("DoctorController.filter method is called");
         map = service.filterDoctor(name, speciality, time);
+        System.out.println("map size is " + map.size());
         return ResponseEntity.status(HttpStatus.OK).body(map);
     }
 

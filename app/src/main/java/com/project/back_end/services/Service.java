@@ -95,6 +95,13 @@ public class Service {
 
     public Map<String, Object> filterDoctor(String name, String specility, String time) {
         Map<String, Object> map = new HashMap<>();
+        System.out.println("Service.filterDoctor is called");
+        if (!specility.equals("null") && !time.equals("null")) {
+            map = doctorService.filterDoctorByTimeAndSpecility(specility, time);
+        }
+        else {
+            map.put("doctors", doctorService.getDoctors());
+        }
         return map;
     }
 

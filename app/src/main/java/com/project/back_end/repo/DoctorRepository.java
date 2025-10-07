@@ -47,6 +47,9 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long> {
 //      - Return type: List<Doctor>
 //      - Parameters: String specialty
 
+    @Query(
+        "SELECT doc FROM Doctor doc WHERE LOWER(doc.specialty) = LOWER(:specialty)"
+    )
     List<Doctor> findBySpecialtyIgnoreCase(String specialty);
 
 // 3. @Repository annotation:

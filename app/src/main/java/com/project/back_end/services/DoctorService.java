@@ -59,6 +59,7 @@ public class DoctorService {
     public List<String> getDoctorAvailability(Long doctorId, LocalDate date) {
         Optional<Doctor> doctor = doctorRepository.findById(doctorId);
         //Optional<Doctor> ???
+        
 
         List<String> availabletimeslots ; //=new ArrayList<>();
         //return availabletimeslots;
@@ -156,8 +157,11 @@ public class DoctorService {
 //    - This method processes a list of doctors and their available times to return those that fit the time criteria.
 //    - Instruction: Ensure that the time filtering logic correctly handles both AM and PM time slots and edge cases.
 
-    public  List<Doctor> filterDoctorByTime(List<Doctor> doctors, String time_period)
+    @Transactional
+    public List<Doctor> filterDoctorByTime(List<Doctor> doctors, String time_period)
     {
+        //还没有实现根据时间端来过滤
+        //example time_period:  09:00-10:00
         return doctors;       
     }
 
@@ -189,8 +193,11 @@ public class DoctorService {
 //    - Instruction: Ensure the time filtering is accurately applied based on the given specialty and time period (AM/PM).
 
     @Transactional
-    public Map<String, Object> filterDoctorByTimeAndSpecility(String specilty, String amOrPm) {
+    public Map<String, Object> filterDoctorByTimeAndSpecility(String specilty, String time_period) {
         Map<String, Object> map = new HashMap<>();
+        List<Doctor> doctors = doctorRepository.findBySpecialtyIgnoreCase(specilty);
+        List<Doctor> filteredDoctors = filterDoctorByTime(doctors,time_period);
+        map.put("doctors", filteredDoctors);
         return map;
     }
 
