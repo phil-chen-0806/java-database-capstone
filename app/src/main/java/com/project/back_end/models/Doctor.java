@@ -1,6 +1,4 @@
 package com.project.back_end.models;
-// add some packages may not be used
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.util.List;
@@ -97,6 +95,19 @@ public class Doctor {
 
     @ElementCollection
     private List<String> availableTimes;
+
+    // Constructors
+    public Doctor() {}
+
+    public Doctor(String name, String specialty, String email, String password, String phone, List<String> availableTimes) {
+        this.name = name;
+        this.specialty = specialty;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.availableTimes = availableTimes;
+    }
+ 
     
 // 8. Getters and Setters:
 //    - Standard getter and setter methods are provided for all fields: id, name, specialty, email, password, phone, and availableTimes.

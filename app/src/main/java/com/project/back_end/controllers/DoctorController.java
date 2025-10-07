@@ -1,12 +1,15 @@
 package com.project.back_end.controllers;
+
 import com.project.back_end.DTO.Login;
 import com.project.back_end.models.Doctor;
 import com.project.back_end.services.Service;
 import com.project.back_end.services.DoctorService;
+
 import jakarta.validation.Valid;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -71,6 +74,7 @@ public class DoctorController {
         Map<String, Object> map = new HashMap<>();
         System.out.println("incoming request controller is called");
         map.put("doctors", doctorService.getDoctors());
+        System.out.println("map size is " + map.size());
         return ResponseEntity.status(HttpStatus.OK).body(map);
     }
 
